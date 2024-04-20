@@ -1,10 +1,10 @@
 
-import LogoTitle from '../../assets/images/logo-s.png';
+// import LogoTitle from '../../assets/images/logo-s.png';
 import {Link} from 'react-router-dom';
 import './index.scss';
 import { useEffect, useState } from 'react';
 import AnimatedLetters from '../AnimatedLetters';
-import Logo from './Logo'
+// import Logo from './Logo'
 import Loader from 'react-loaders';
 
 
@@ -84,7 +84,7 @@ const Home = () => {
                 <span className={`${letterClass} _13`}>I</span>   
                 <span className={`${letterClass} _14`}>'m</span>   
 
-                <img src={LogoTitle} alt="developer" />
+                {/* <img src={LogoTitle} alt="developer" /> */}
                 <AnimatedLetters letterClass={letterClass}
                 strArray={nameArray}
                 idx={15}/>
