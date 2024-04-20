@@ -1,0 +1,36 @@
+@keyframes rotate {
+
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+
+    }
+}
+
+.yeezy {
+    padding: 8px 0;
+    // top: 200px;
+    margin-left: 100px;
+    width: 200px;
+    position: relative;
+    animation: fadeIn 3s;
+    
+    
+    
+}
+
+.vinyl {
+    // top: inherit; 
+    position: absolute;
+    left: 200px;
+    z-index: -1;
+    opacity: 50;
+    width: 200px;
+    animation: rotate 3s;
+    animation-delay: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+}
