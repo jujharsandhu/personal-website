@@ -1,3 +1,5 @@
+
+
 @keyframes rotate {
 
     from {
@@ -11,10 +13,10 @@
 
 .yeezy {
     padding: 8px 0;
-    // top: 200px;
+    top: 200px;
     margin-left: 100px;
     width: 200px;
-    position: relative;
+    position: absolute;
     animation: fadeIn 3s;
     
     
@@ -25,6 +27,7 @@
     // top: inherit; 
     position: absolute;
     left: 200px;
+    top: 200px;
     z-index: -1;
     opacity: 50;
     width: 200px;

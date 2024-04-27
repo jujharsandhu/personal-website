@@ -11,7 +11,7 @@ import Loader from 'react-loaders';
 const Home = () => {
 
     const [letterClass, setLetterClass] = useState('text-animate')
-    const nameArray = ['J', 'u', 'j', 'h', 'a', 'r']
+    const nameArray = ['', 'J', 'u', 'j', 'h', 'a', 'r']
     const jobArray = ['s', 'o', 'f', 't', 'w', 'a', 'r', 'e', ' ', 'e', 'n', 'g', 'i', 'n', 'e', 'e', 'r']
     
     // useEffect(() => {
@@ -31,46 +31,46 @@ const Home = () => {
                     clearTimeout(timeoutId)
                 }
     }, []);
-    useEffect(() => {
-        let words = document.querySelectorAll(".word");
-        words.forEach((word) => {
-            let letters = word.textContent.split("");
-            word.textContent = "";
-            letters.forEach((letter) => {
-                let span = document.createElement("span");
-                span.textContent = letter;
-                span.className = "letter";
-                word.append(span);
-            });
-        });
-        let currentWordIndex = 0;
-        let maxWordIndex = words.length - 1;
-        words[currentWordIndex].style.opacity = "1";
+    // useEffect(() => {
+    //     let words = document.querySelectorAll(".word");
+    //     words.forEach((word) => {
+    //         let letters = word.textContent.split("");
+    //         word.textContent = "";
+    //         letters.forEach((letter) => {
+    //             let span = document.createElement("span");
+    //             span.textContent = letter;
+    //             span.className = "letter";
+    //             word.append(span);
+    //         });
+    //     });
+    //     let currentWordIndex = 0;
+    //     let maxWordIndex = words.length - 1;
+    //     words[currentWordIndex].style.opacity = "1";
     
-        let rotateText = () => {
-            let currentWord = words[currentWordIndex];
-            let nextWord = currentWordIndex === maxWordIndex ? words[0]: words[currentWordIndex + 1];
-            Array.from(currentWord.children).forEach((letter, i) => {
-                setTimeout(() => {
-                    letter.className = "letter out";
-                }, i * 80);
-            });
-            nextWord.style.opacity = "1";
-            // currentWord.style.opacity = "0";
+    //     let rotateText = () => {
+    //         let currentWord = words[currentWordIndex];
+    //         let nextWord = currentWordIndex === maxWordIndex ? words[0]: words[currentWordIndex + 1];
+    //         Array.from(currentWord.children).forEach((letter, i) => {
+    //             setTimeout(() => {
+    //                 letter.className = "letter out";
+    //             }, i * 80);
+    //         });
+    //         nextWord.style.opacity = "1";
+    //         // currentWord.style.opacity = "0";
 
-            Array.from(nextWord.children).forEach((letter, i) => {
-                letter.className = "letter behind";
-                setTimeout(() => {
-                    letter.className = "letter in";
-                }, 340 + i * 80);
-            });;
-            currentWordIndex = 
-            currentWordIndex === maxWordIndex ? 0 : currentWordIndex + 1;
-         }
-         rotateText();
-         setInterval(rotateText, 4000);
+    //         Array.from(nextWord.children).forEach((letter, i) => {
+    //             letter.className = "letter behind";
+    //             setTimeout(() => {
+    //                 letter.className = "letter in";
+    //             }, 340 + i * 80);
+    //         });;
+    //         currentWordIndex = 
+    //         currentWordIndex === maxWordIndex ? 0 : currentWordIndex + 1;
+    //      }
+    //      rotateText();
+    //      setInterval(rotateText, 4000);
 
-    })
+    // })
 
 
     return (
@@ -79,10 +79,12 @@ const Home = () => {
             <div className="text-zone">
                 <h1>
                 <span className={letterClass}>H</span>
-                <span className={`${letterClass} _12`}>i,</span>   
+                <span className={`${letterClass} _12`}>e</span>  
+                <span className={`${letterClass} _13`}>y</span>   
+
                 <br />
-                <span className={`${letterClass} _13`}>I</span>   
-                <span className={`${letterClass} _14`}>'m</span>   
+                <span className={`${letterClass} _14`}>I</span>   
+                <span className={`${letterClass} _15`}>'m</span>   
 
                 {/* <img src={LogoTitle} alt="developer" /> */}
                 <AnimatedLetters letterClass={letterClass}
@@ -96,24 +98,22 @@ const Home = () => {
                                
                 </h1>
                 <br />
-                <div class='rotating-text'>
+                <div class='full-text'>
                     <p>Experts would describe Jujhar as </p>
                     < br />
-                    <p>
-                        <span class='word w-1'>awesome!</span>
-                        <span class='word w-2'>passionate!</span>
-                        <span class='word w-3'>goated!</span>
+                    <span class='word w-1'>awesome!</span>
+                    <span class='word w-2'>passionate!</span>
+                    <span class='word w-3'>collaborative!</span>
 
-                        {/* <span class='word w-3'>a&nbspteam&nbspplayer!</span> */}
-                        <span class='word w-4'>reliable!</span>
-                        <span class='word w-5'>egirl!</span>
+                    {/* <span class='word w-3'>a&nbspteam&nbspplayer!</span> */}
+                    <span class='word w-4'>reliable!</span>
+                    <span class='word w-5'>adaptable!</span>
 
-                        {/* <span class='word w-5'>an&nbspeager&nbsplearner!</span> */}
+                    {/* <span class='word w-5'>an&nbspeager&nbsplearner!</span> */}
 
 
-                    </p>
                 </div>
-                <h2>Full Stack Developer / Python / Java / JavaScript</h2>
+                <h2>Full Stack Developer / Python / Java / C / JavaScript</h2>
 
                 <Link to='/hobbies' className='flat-button'>
                     MORE ABOUT ME

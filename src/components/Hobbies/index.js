@@ -6,21 +6,52 @@ import TLOP from '../../assets/images/tlop.JPG'
 import Vinyl from '../../assets/images/vinyl.png'
 import './index.scss'
 import { Loader } from 'react-loaders';
+import { useState, useEffect } from "react";
+import AnimatedLetters from "../AnimatedLetters";
+
+const Hobbies = () => {
+
+    const [letterClass, setLetterClass] = useState('text-animate')
 
 
-const Hobbies = () => (
-    <>
-    <div className="container hobby-page">
-        Music
-        <img className='yeezy' src={Graduation} alt='graduation' />
-        <img className='yeezy' src={TLOP} alt='tlop' />
-        <img className="vinyl" src={Vinyl} alt='vinyl'/>
+    useEffect(() => {
         
-    </div>
+        let timeoutId = setTimeout(() => {
+            setLetterClass('text-animate-hover')
+        }, 4000)
+        
+        return () => {
+                    clearTimeout(timeoutId)
+                }
+    }, [])
+
+
+    return (
+    <>
+        <div className='container hobby-page'>
+            <div className='text-zone'>
+                <h1>
+                    <AnimatedLetters
+                    letterClass={letterClass} 
+                    strArray={['M', 'y', ' ', 'H', 'o', 'b', 'b', 'i', 'e', 's']}
+                    idx={15}
+                    />
+                </h1>
+
+            <p className="music-subtext"> I enjoy listening to music and going to concerts. </p>
+            
+            <img className='yeezy' src={Graduation} alt='graduation' />
+            <img className='yeezy' src={TLOP} alt='tlop' />
+            <img className="vinyl" src={Vinyl} alt='vinyl'/>
+            
+            <p className='basketball-subtext'> I enjoy playing and watching many sports including basketball. </p>
+        </div>
+    </ div>
     <Loader type='pacman' />
     </>
 
-)
+    )
+}
 
 // const styles = StyleSheet.create({
 //     container: {

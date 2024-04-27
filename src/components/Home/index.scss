@@ -14,13 +14,12 @@
         margin: 0;
         font-family: 'Coolvetica';
         font-weight: 400;
-        // white-space: nowrap;
+        white-space: nowrap;
         // overflow: hidden;
 
         &::before {
-            content: '<h1>';
             font-family: 'La Belle Aurore';
-            color: #ffd700;
+            color: #caebf2;
             font-size: 18px;
             position: absolute;
             margin-top: -40px;
@@ -30,9 +29,8 @@
         }
 
         &::after {
-            content: '<h1 />';
             font-family: 'La Belle Aurore';
-            color: #ffd700;
+            color: #caebf2;
             font-size: 18px;
             position: absolute;
             margin-top: 18px;
@@ -67,21 +65,21 @@
     }
 
     .flat-button {
-        color: #ffd700;
+        color: #caebf2;
         font-size: 13px;
         font-weight: 400;
         letter-spacing: 4px;
         font-family: sans-serif;
         text-decoration: none;
         padding: 10px 18px;
-        border: 1px solid #ffd700;
+        border: 1px solid #caebf2;
         margin-top: 25px;
         float: left;
         animation: fadeIn 1s 1.8s backwards;
         white-space: nowrap;
 
         &:hover {
-            background: #ffd700;
+            background: #caebf2;
             color: #333;
 
         }
@@ -91,59 +89,137 @@
 
 }
 
-.rotating-text {
+.full-text {
+    // position: absolute;
+    font-size: 15px;
     font-size: 15px;
     font-family: sans-serif;
     font-weight: bold;
     color: #fff;
     transform: translateX(-80px);
     margin-left: 80px;
+    display: inline-block;
+    width: calc(100% - 50px);
+    text-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+
+    .word {
+        position: absolute;
+        top: 40px;
+        overflow: hidden;
+        animation: animate 10s linear infinite;
+        opacity: 0;
+    }
+    @keyframes animate
+    {
+        0% {
+            opacity: 0;
+            transform: translateY(-50px);
+        }
+        2% {
+            opacity: 1;
+            transform: translateY(0px);
+        }
+        18% {
+            opacity: 1;
+            transform: translateY(0px);
+        }
+        20% {
+            opacity: 0;
+            transform: translateY(50px);
+        }
+        100% {
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+    }
+    .w-1 {
+        animation-delay: 0s;
+        color: #e74c3c;
+    }
+    .w-2 {
+        animation-delay: 2s;
+
+        color: #7e37cf;
+    }
+    .w-3 {
+        animation-delay: 4s;
+
+        color: #7bd643;
+    }
+    .w-4 {
+        animation-delay: 6s;
+
+        color: #1d29d3;
+    }
+    .w-5 {
+        animation-delay: 8s;
+
+        color: #ffffff;
+    }
+    
 }
+    
 
 
-.rotating-text p {
-    display: inline-flex;
-    margin: 0;
-    vertical-align: top;
-}
 
 
-.rotating-text p .word{
-    position: absolute;
-    display: flex;
-    opacity: 0;
-}
-
-.rotating text p .word .letter {
-    transform-origin: center center 25px;    
-}
-
-.rotating text p .word .letter.out {
-    transform: rotateX(90deg);
-    transition: 0.32s cubic-bezier(0.6, 0, 0.7, 0.2);
-}
 
 
-.rotating-text p .word .letter.in {
-    transition: 0.8s ease;
-}
 
-.rotating-text p .word .letter.behind {
-    transform: rotateX(-90deg);
-}
+// .rotating-text {
+//     font-size: 15px;
+//     font-family: sans-serif;
+//     font-weight: bold;
+//     color: #fff;
+//     transform: translateX(-80px);
+//     margin-left: 80px;
+// }
 
-.w-1 {
-    color: #e74c3c;
-}
-.w-2 {
-    color: #7e37cf;
-}
-.w-3 {
-    color: #7bd643;
-}
-.w-4 {
-    color: #1d29d3;
-}
-.w-5 {
-    color: #ffffff;
-}
+
+// .rotating-text p {
+//     display: inline-flex;
+//     margin: 0;
+//     vertical-align: top;
+// }
+
+
+// .rotating-text p .word{
+//     position: absolute;
+//     display: flex;
+//     opacity: 0;
+// }
+
+// .rotating text p .word .letter {
+//     transform-origin: center center 25px;    
+// }
+
+// .rotating text p .word .letter.out {
+//     transform: rotateX(90deg);
+//     transition: 0.32s cubic-bezier(0.6, 0, 0.7, 0.2);
+// }
+
+
+// .rotating-text p .word .letter.in {
+//     transition: 0.8s ease;
+// }
+
+// .rotating-text p .word .letter.behind {
+//     transform: rotateX(-90deg);
+// }
+
+// .w-1 {
+//     color: #e74c3c;
+// }
+// .w-2 {
+//     color: #7e37cf;
+// }
+// .w-3 {
+//     color: #7bd643;
+// }
+// .w-4 {
+//     color: #1d29d3;
+// }
+// .w-5 {
+//     color: #ffffff;
+// }
