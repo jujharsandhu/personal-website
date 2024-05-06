@@ -8,6 +8,7 @@ import './index.scss'
 import { Loader } from 'react-loaders';
 import { useState, useEffect } from "react";
 import AnimatedLetters from "../AnimatedLetters";
+import Basketball from '../../assets/images/basketball.png'
 
 const Hobbies = () => {
 
@@ -38,13 +39,25 @@ const Hobbies = () => {
                     />
                 </h1>
 
-            <p className="music-subtext"> I enjoy listening to music and going to concerts. </p>
+            <p className='basketball-subtext'> I enjoy playing and watching many sports including basketball. </p>
             
             <img className='yeezy' src={Graduation} alt='graduation' />
             <img className='yeezy' src={TLOP} alt='tlop' />
             <img className="vinyl" src={Vinyl} alt='vinyl'/>
             
-            <p className='basketball-subtext'> I enjoy playing and watching many sports including basketball. </p>
+        
+            <p className="music-subtext"> I enjoy listening to music and going to concerts. </p>
+
+            {/* <div className="basketball">
+                <div className="ball">
+                    <div className="lines" />
+                    <div className="shadow" />
+                </div>
+            </div> */}
+
+            <img className="basketball" src={Basketball} alt='basketball' />
+            <div className="shadow" />
+
         </div>
     </ div>
     <Loader type='pacman' />
